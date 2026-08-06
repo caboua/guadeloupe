@@ -15,3 +15,4 @@ Site vitrine haut de gamme de la Villa CABOUA (Bouillante, Guadeloupe).
   message pré-rempli avec dates et total.
 
 L'ancien site reste sur https://caboua.github.io/vacances/.
+
