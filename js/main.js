@@ -289,7 +289,7 @@ const billing = document.getElementById("bkBilling");
 
 const texteBase = `
   <p class="bk-base"><strong>À partir de 120&nbsp;€ / nuit</strong> pour 2 personnes.</p>
-  <p class="bk-note">Minimum ${MIN_NUITS} nuits · bébés gratuits (lit parapluie fourni, ${MAX_BEBES} max) · aucun frais caché.</p>
+  <p class="bk-note">Minimum ${MIN_NUITS} nuits · bébé gratuit (lit parapluie fourni), aucun frais caché.</p>
 `;
 
 function majDatesAffichees() {
