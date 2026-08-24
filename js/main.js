@@ -97,7 +97,9 @@ function allerAncre(hash, comportement) {
   if (cible.classList.contains("reveal")) cible.classList.add("in");
   cible.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
   const y = cible.getBoundingClientRect().top + window.scrollY - 76;
-  window.scrollTo({ top: Math.max(y, 0), behavior: comportement || "auto" });
+  /* "instant" est indispensable : html { scroll-behavior: smooth }
+     transformerait sinon le saut en une longue animation depuis le haut. */
+  window.scrollTo({ top: Math.max(y, 0), behavior: comportement || "instant" });
   majNav();
 }
 
