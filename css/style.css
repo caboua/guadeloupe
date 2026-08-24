@@ -978,7 +978,7 @@ img { display: block; max-width: 100%; }
 
 @media (max-width: 700px) {
   .review-vedette { padding: 30px 22px; }
-  .review-vedette p + p { font-size: 1.08rem; }
+  .review-vedette p + p { font-size: 1.16rem; }
 }
 
 @media (max-width: 940px) {
