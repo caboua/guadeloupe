@@ -85,6 +85,31 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
 
+/* ── Arrivée directe sur une ancre (lien Instagram, QR code…) ─
+   Les photos se chargent après coup et décalent la page : le saut
+   natif du navigateur tombe souvent à côté. On refait donc le
+   positionnement une fois tout chargé, et on révèle immédiatement
+   la section visée (sinon elle reste en opacity 0). */
+
+function allerAncre(hash, comportement) {
+  const cible = hash && document.querySelector(hash);
+  if (!cible) return;
+  if (cible.classList.contains("reveal")) cible.classList.add("in");
+  cible.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+  const y = cible.getBoundingClientRect().top + window.scrollY - 76;
+  window.scrollTo({ top: Math.max(y, 0), behavior: comportement || "auto" });
+  majNav();
+}
+
+if (location.hash) {
+  const ancreDepart = location.hash;
+  allerAncre(ancreDepart);
+  window.addEventListener("load", () => {
+    allerAncre(ancreDepart);
+    setTimeout(() => allerAncre(ancreDepart), 500);
+  });
+}
+
 /* ── Galerie / lightbox ──────────────────────────────────── */
 
 const figures = Array.from(document.querySelectorAll("#gallery figure"));
