@@ -511,6 +511,28 @@ img { display: block; max-width: 100%; }
   color: var(--gold);
 }
 
+/* Avis vedette : occupe toute la largeur de la grille */
+.review-vedette {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 46px 40px;
+  border-top: 2px solid var(--gold);
+}
+.review-vedette .review-stars {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: .95rem;
+  letter-spacing: .34em;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.review-vedette p + p {
+  max-width: 72ch;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.62;
+}
+
 /* ── Réservation ─────────────────────────────────────────── */
 .booking {
   display: grid;
@@ -952,6 +974,11 @@ img { display: block; max-width: 100%; }
   .booking { grid-template-columns: 1fr; }
   .loc-grid { grid-template-columns: 1fr; }
   .section { padding: 80px 0; }
+}
+
+@media (max-width: 700px) {
+  .review-vedette { padding: 30px 22px; }
+  .review-vedette p + p { font-size: 1.08rem; }
 }
 
 @media (max-width: 940px) {
