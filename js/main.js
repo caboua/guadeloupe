@@ -13,7 +13,7 @@ const WHATSAPP = "590690520616";
 const MAIL = "villa.caboua@gmail.com";
 const MIN_NUITS = 2;
 const MAX_PERSONNES = 6;
-const MAX_BEBES = 3;
+const MAX_BEBES = 1;
 
 /* Tarif par nuit selon le nombre de voyageurs */
 function prixNuit(personnes) {

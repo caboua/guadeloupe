@@ -9,7 +9,7 @@ Site vitrine haut de gamme de la Villa CABOUA (Bouillante, Guadeloupe).
   [Calendrier](https://github.com/caboua/Calendrier), synchronisé automatiquement
   avec les iCal Airbnb et Booking) — aucune configuration à faire ici.
 - Tarifs : 120 € (2 pers.) → 200 € (6 pers.) la nuit, minimum 2 nuits,
-  bébés gratuits (3 max). À modifier dans `js/main.js` (`prixNuit`) et dans le
+  bébé gratuit (1 max, lit parapluie fourni). À modifier dans `js/main.js` (`prixNuit`) et dans le
   tableau des tarifs de `index.html`.
 - Réservation par WhatsApp (+590 690 52 06 16) ou e-mail (villa.caboua@gmail.com),
   message pré-rempli avec dates et total.
