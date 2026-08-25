@@ -420,11 +420,27 @@
         <div><strong>50&nbsp;min</strong><span>Basse-Terre et le volcan de la Soufrière</span></div>
         <div><strong>1&nbsp;h</strong><span>Aéroport international Pôle Caraïbes (PTP)</span></div>
       </div>
-      <a class="loc-map" href="https://www.google.com/maps?q=Rue+Sylvere+Lesueur+97125+Bouillante+Guadeloupe"
-         target="_blank" rel="noopener"
-         style="display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;background:#f2efe9;border-radius:12px;text-decoration:none;color:#123f37;font-weight:600;">
-        Voir la Villa CABOUA sur Google Maps ↗
-      </a>
+      <div class="loc-map" id="mapHolder"
+           style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.9rem;padding:2rem;background:#f2efe9;border-radius:12px;">
+        <p style="margin:0;font-size:.92rem;line-height:1.5;color:#4a5a55;max-width:34ch;">
+          La carte est fournie par Google Maps, qui dépose des cookies.
+        </p>
+        <button type="button" id="mapBtn"
+                style="cursor:pointer;border:0;border-radius:999px;padding:.75rem 1.5rem;background:#123f37;color:#fff;font:inherit;font-weight:600;">
+          Afficher la carte
+        </button>
+      </div>
+      <script>
+        document.getElementById('mapBtn').addEventListener('click', function () {
+          var h = document.getElementById('mapHolder');
+          var f = document.createElement('iframe');
+          f.className = 'loc-map';
+          f.title = 'Carte — Rue Sylvère Lesueur, Bouillante, Guadeloupe';
+          f.src = 'https://www.google.com/maps?q=Rue+Sylvere+Lesueur+97125+Bouillante+Guadeloupe&output=embed';
+          f.loading = 'lazy';
+          h.replaceWith(f);
+        });
+      </script>
     </div>
   </div>
 </section>
