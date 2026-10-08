@@ -13,7 +13,7 @@ const WHATSAPP = "590690520616";
 const MAIL = "villa.caboua@gmail.com";
 const MIN_NUITS = 2;
 const MAX_PERSONNES = 6;
-const MAX_BEBES = 3;
+const MAX_BEBES = 1;
 
 /* Tarif par nuit selon le nombre de voyageurs */
 function prixNuit(personnes) {
@@ -84,6 +84,33 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+/* ── Arrivée directe sur une ancre (lien Instagram, QR code…) ─
+   Les photos se chargent après coup et décalent la page : le saut
+   natif du navigateur tombe souvent à côté. On refait donc le
+   positionnement une fois tout chargé, et on révèle immédiatement
+   la section visée (sinon elle reste en opacity 0). */
+
+function allerAncre(hash, comportement) {
+  const cible = hash && document.querySelector(hash);
+  if (!cible) return;
+  if (cible.classList.contains("reveal")) cible.classList.add("in");
+  cible.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+  const y = cible.getBoundingClientRect().top + window.scrollY - 76;
+  /* "instant" est indispensable : html { scroll-behavior: smooth }
+     transformerait sinon le saut en une longue animation depuis le haut. */
+  window.scrollTo({ top: Math.max(y, 0), behavior: comportement || "instant" });
+  majNav();
+}
+
+if (location.hash) {
+  const ancreDepart = location.hash;
+  allerAncre(ancreDepart);
+  window.addEventListener("load", () => {
+    allerAncre(ancreDepart);
+    setTimeout(() => allerAncre(ancreDepart), 500);
+  });
+}
 
 /* ── Galerie / lightbox ──────────────────────────────────── */
 
@@ -262,7 +289,7 @@ const billing = document.getElementById("bkBilling");
 
 const texteBase = `
   <p class="bk-base"><strong>À partir de 120&nbsp;€ / nuit</strong> pour 2 personnes.</p>
-  <p class="bk-note">Minimum ${MIN_NUITS} nuits · bébés gratuits (lit parapluie fourni, ${MAX_BEBES} max) · aucun frais caché.</p>
+  <p class="bk-note">Minimum ${MIN_NUITS} nuits · bébé gratuit (lit parapluie fourni), aucun frais caché.</p>
 `;
 
 function majDatesAffichees() {

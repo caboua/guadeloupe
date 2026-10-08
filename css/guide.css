@@ -1,0 +1,138 @@
+/* Villa CABOUA — feuille de style des pages guide
+   Reprend la charte de la page d'accueil : vert profond, Cormorant Garamond. */
+
+:root{
+  --vert:#123f37;
+  --vert-clair:#1d6b5c;
+  --lagon:#2a8a86;
+  --sable:#f7f4ee;
+  --sable-fonce:#ece5d8;
+  --encre:#22282a;
+  --gris:#5f6b68;
+  --ligne:rgba(18,63,55,.14);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+}
+
+body{
+  margin:0;
+  background:var(--sable);
+  color:var(--encre);
+  font-family:"Inter","Helvetica Neue",Arial,sans-serif;
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-weight:500;
+  line-height:1.15;
+  color:var(--vert);
+  margin:0 0 .5em;
+}
+h1{font-size:clamp(2.4rem,6vw,4rem)}
+h2{font-size:clamp(1.8rem,4vw,2.7rem);margin-top:2.2em}
+h3{font-size:clamp(1.25rem,2.6vw,1.6rem);margin-top:1.6em}
+h2 em,h1 em{font-style:italic;color:var(--lagon)}
+
+p{margin:0 0 1.1em}
+a{color:var(--vert-clair);text-decoration:underline;text-underline-offset:3px}
+a:hover{color:var(--lagon)}
+:focus-visible{outline:2px solid var(--lagon);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:760px;margin:0 auto;padding:0 22px}
+
+/* En-tête */
+.bandeau{
+  background:var(--vert);
+  color:#fff;
+  padding:14px 0;
+  position:sticky;top:0;z-index:20;
+}
+.bandeau .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;justify-content:space-between}
+.marque{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:1.35rem;letter-spacing:.06em;color:#fff;text-decoration:none;
+}
+.bandeau nav{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.83rem;letter-spacing:.06em;text-transform:uppercase}
+.bandeau nav a{color:rgba(255,255,255,.82);text-decoration:none}
+.bandeau nav a:hover{color:#fff}
+
+/* Chapeau de page */
+.chapeau{background:var(--sable-fonce);padding:56px 0 44px;border-bottom:1px solid var(--ligne)}
+.oeil{
+  font-size:.78rem;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--lagon);margin:0 0 14px;font-weight:600;
+}
+.accroche{font-size:1.15rem;color:var(--gris);max-width:56ch;margin:0}
+
+main{padding:10px 0 70px}
+
+/* Signature : le repère de distance depuis la villa */
+.repere{
+  display:inline-flex;align-items:baseline;gap:9px;
+  background:#fff;border:1px solid var(--ligne);border-left:3px solid var(--lagon);
+  padding:7px 14px;margin:0 0 14px;font-size:.85rem;
+}
+.repere b{font-family:"Cormorant Garamond",Georgia,serif;font-size:1.5rem;color:var(--vert);font-weight:600;line-height:1}
+.repere span{color:var(--gris);letter-spacing:.04em;text-transform:uppercase;font-size:.72rem}
+
+.fiche{
+  background:#fff;border:1px solid var(--ligne);
+  padding:26px 26px 18px;margin:26px 0;
+}
+.fiche h3{margin-top:0}
+
+ul.liste{padding-left:0;list-style:none;margin:0 0 1.2em}
+ul.liste li{padding:8px 0 8px 26px;border-bottom:1px solid var(--ligne);position:relative}
+ul.liste li::before{content:"—";position:absolute;left:0;color:var(--lagon)}
+ul.liste li:last-child{border-bottom:0}
+
+.encart{
+  background:var(--vert);color:#fff;padding:30px 28px;margin:44px 0;
+}
+.encart h3{color:#fff;margin-top:0}
+.encart p{color:rgba(255,255,255,.86)}
+.encart a{color:#9fe3d6}
+
+.bouton{
+  display:inline-block;background:var(--lagon);color:#fff!important;
+  text-decoration:none;padding:13px 26px;font-size:.9rem;
+  letter-spacing:.08em;text-transform:uppercase;margin:6px 8px 6px 0;
+}
+.bouton:hover{background:var(--vert-clair)}
+.bouton.clair{background:transparent;border:1px solid rgba(255,255,255,.5)}
+
+table{width:100%;border-collapse:collapse;margin:1.4em 0;font-size:.95rem}
+th,td{text-align:left;padding:11px 10px;border-bottom:1px solid var(--ligne)}
+th{color:var(--vert);font-weight:600;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase}
+
+details{border-bottom:1px solid var(--ligne);padding:14px 0}
+details summary{cursor:pointer;font-weight:600;color:var(--vert);list-style:none}
+details summary::-webkit-details-marker{display:none}
+details summary::before{content:"+ ";color:var(--lagon)}
+details[open] summary::before{content:"– "}
+details p{margin:12px 0 0;color:var(--gris)}
+
+figure{margin:26px 0}
+figure img{width:100%;height:auto;display:block}
+figcaption{font-size:.83rem;color:var(--gris);padding-top:8px}
+
+.note{font-size:.85rem;color:var(--gris);font-style:italic}
+
+footer{background:var(--vert);color:rgba(255,255,255,.75);padding:44px 0;font-size:.88rem}
+footer a{color:#9fe3d6}
+footer .marque{display:block;margin-bottom:10px}
+
+@media(max-width:640px){
+  body{font-size:16px}
+  .chapeau{padding:38px 0 30px}
+  .fiche{padding:20px 18px 12px}
+}
