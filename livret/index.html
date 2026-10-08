@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Livret d'accueil — Villa CABOUA, Bouillante</title>
+  <meta name="description" content="Livret d'accueil de la Villa CABOUA à Bouillante : réservé à nos voyageurs, accès avec le code communiqué lors de la réservation.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../icone.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600;800&display=swap">
+  <link rel="stylesheet" href="assets/styles.css?v=1">
+  <link rel="stylesheet" href="assets/livret.css?v=3">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<header class="topbar" aria-label="Navigation principale">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Retour en haut">
+      <span class="brand-mark">VC</span>
+      <span>Villa CABOUA <small>Bouillante - Guadeloupe</small></span>
+    </a>
+    <nav class="navlinks" aria-label="Sections du livret">
+      <a href="../" class="btn btn-dark btn-nav">Le site de la villa</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+<section id="top" class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">Réservé à nos voyageurs</span>
+      <h1><span class="script">Bienvenue</span><br>Villa CABOUA</h1>
+      <p>Votre livret d'accueil : l'arrivée, le Wi-Fi, les équipements de la maison, les règles, les numéros utiles — et nos bons plans autour de Bouillante. Entrez le code reçu avec votre réservation pour tout consulter.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#espace-voyageurs">🔒 Entrer mon code</a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="Résumé de la villa">
+      <h2>En un coup d'œil</h2>
+      <div class="badges">
+        <div class="badge">3 chambres</div>
+        <div class="badge">2 salles d'eau</div>
+        <div class="badge">3 WC</div>
+        <div class="badge">Terrasse</div>
+        <div class="badge">Jardin</div>
+        <div class="badge">Parking</div>
+        <div class="badge">Lave-vaisselle</div>
+        <div class="badge">Lave-linge</div>
+        <div class="badge">Climatisation</div>
+      </div>
+      <p class="privacy">Secteur Ricard, 97125 Bouillante. L'adresse précise et les informations pratiques sont communiquées aux voyageurs confirmés.</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section lock-section" id="espace-voyageurs">
+  <div class="container">
+    <div class="section-title">
+      <h2><span class="script">Votre</span><br>livret d'accueil</h2>
+      <p>Tout le séjour en une page : le pratique de la maison et nos adresses préférées de la Côte-sous-le-Vent.</p>
+    </div>
+    <div class="lock-grid">
+      <div class="lock-card">
+        <div class="lock-badge" aria-hidden="true">🔒</div>
+        <h3>Entrez votre code d'accès</h3>
+        <p class="small">Il vous a été communiqué avec votre réservation.</p>
+        <form id="codeForm" autocomplete="off">
+          <label class="sr-only" for="codeInput">Code d'accès</label>
+          <input id="codeInput" name="code" type="text" placeholder="Votre code" autocapitalize="characters" autocorrect="off" spellcheck="false" enterkeyhint="go">
+          <button class="btn btn-dark" type="submit" id="codeBtn">Déverrouiller le livret</button>
+        </form>
+        <p class="lock-msg" id="lockMsg" role="status" aria-live="polite"></p>
+        <p class="small lock-help">Code égaré ? Écrivez-nous au <a href="tel:+590690520616">0690 52 06 16</a> ou à <a href="mailto:villa.caboua@gmail.com">villa.caboua@gmail.com</a>.</p>
+      </div>
+      <div class="lock-preview" aria-label="Contenu du livret">
+        <p class="lock-preview-title">Ce que contient votre livret</p>
+        <ul>
+          <li><b>Arrivée &amp; remise des clés</b><span>Horaires, accueil sur place, boîte à clés</span></li>
+          <li><b>Wi-Fi de la villa</b><span>Réseau et mot de passe</span></li>
+          <li><b>Équipements de la maison</b><span>Four, café, lave-vaisselle, climatisation, barbecue</span></li>
+          <li><b>Nos bons plans à Bouillante</b><span>Plages, chutes, snorkeling aux îlets Pigeon</span></li>
+          <li><b>Nos restaurants préférés</b><span>Les tables où l'on revient, et les commerces</span></li>
+          <li><b>Numéros d'urgence &amp; départ</b><span>Pharmacies, hôpital, check-list de fin de séjour</span></li>
+        </ul>
+        <p class="lock-preview-foot">📱 Consultable à tout moment pendant votre séjour, depuis votre téléphone : le code reste mémorisé.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="livretPrive" hidden></div>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <p><strong>Villa CABOUA</strong> — Bouillante, Guadeloupe</p>
+    <p class="footer-links">
+      <a href="../">Le site de la villa</a>
+      <a href="../#reserver">Réserver</a>
+      <a href="https://g.page/r/Cf08pFSiKjt4EBM/review" target="_blank" rel="noopener">Laisser un avis</a>
+    </p>
+  </div>
+</footer>
+
+<script src="js/livret.js?v=3"></script>
+</body>
+</html>
