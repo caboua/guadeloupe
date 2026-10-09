@@ -124,7 +124,7 @@ function ouvrirLightbox(i) {
   lbIndex = (i + figures.length) % figures.length;
   const fig = figures[lbIndex];
   const img = fig.querySelector("img");
-  lbImg.src = img.src;
+  lbImg.src = img.dataset.full || img.src;   /* vignette a l'ecran, photo pleine taille au clic */
   lbImg.alt = img.alt;
   lbCaption.textContent = fig.dataset.caption || "";
   lightbox.hidden = false;
