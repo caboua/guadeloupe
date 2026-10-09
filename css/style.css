@@ -391,6 +391,7 @@ img { display: block; max-width: 100%; }
 
 .gallery img {
   width: 100%;
+  height: auto;          /* sans cela, l'attribut height du HTML etire la photo */
   transition: transform .6s ease, filter .6s ease;
 }
 
